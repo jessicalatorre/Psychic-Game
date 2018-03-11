@@ -18,9 +18,9 @@ var lettersInArray =[]; //this is an open array as the word will be randomly sel
 // var wordChosen = randomWord.split(" ");
 // wordChosen = ["p", "i", "g"];
 
-letterToGuess = options[Math.floor(Math.random() * options.length)]; //cpu randomly choosing elements based on total options in array
-console.log(wordToGuess);
-lettersInArray = wordToGuess.split("");
+letterToGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]; //cpu randomly choosing elements based on total options in array
+console.log(letterToGuess);
+lettersInArray = letterToGuess.split("");
 console.log(lettersInArray); //once a word is chosen
 guessesRemaining = document.getElementById("guessesRemaining"); 
 //don't use inner html we're not grabbing anything from the html, 
