@@ -8,6 +8,10 @@ body {
     width: 100%;
 }
 
+.label {
+    color: blue;
+}
+
 h1 {
     color:whitesmoke;
 }
