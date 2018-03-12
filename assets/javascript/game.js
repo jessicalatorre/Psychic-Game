@@ -19,8 +19,8 @@ function reset(){ //rather than resetting in under conditional statements, try c
     guessesLeft = 9;
     guessedLetters = [];
     updateLettersToGuess();
-    updateGuessesLeft();
-    updateGuessessoFar();
+    GuessesLeft();
+    GuessessoFar();
 };
 
 var updateLetterToGuess = function() {    
@@ -36,16 +36,27 @@ document.onkeyup = function() {
 
 if (userGuesses === computerGuesses) { //condition for winning. comparing userGuesses to computerGuess. If they're the same...
     playerWins++; 
-    reset();                  //Then one point is added to var player wins
-    // guessesRemaining = 9;           //This should reset the guess counter back to 9
-    // guessesSoFar.lenth = 0;         // This shiould reset the gueses so far back to 0
+    reset(); 
+    updateLettersToGuess();              
 }
 
 else if (userGuesses !=== computerGuesses) {  
-    playerLosses++
+    playerLosses++;
     // guessesRemaining = 9;
-    // guesse
+    reset();   
+    updateLettersToGuess();
 }
 
+var html = "<h1>The Psychic Game </h1>" + 
+"<p>Guess what letter I'm thinking of</p>" +
+"<p>Wins: " + playerWins + "</p>" +
+"<p>Losses: " + playerLosses + "</p>" +
+"<p>Guesses Left: " + GuessesLeft + "</p>" +
+"<p>Guesses So Far: " +  GuessessoFar +"</p>";
+
+
+document.querySelector("#psychicGame") = html;
+
+// document.querySelector("#guessessleft").innerHTML = guessesLeft;
 
 
