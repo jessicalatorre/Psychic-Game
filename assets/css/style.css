@@ -1,12 +1,21 @@
-html {
-    background-color: lightblue;
-    background-image: url("/assets/images/crystal.jpeg");
+/* html {
+    background-color: lightblue
+} */
+
+body {
+    background-image: url("../images/crystal.jpeg");
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 h1 {
-    color: red;
+    color:whitesmoke;
 }
 
 p {
-    color: royalblue;
+    color: whitesmoke;
+}
+
+#psychicGame {
+    margin-left: 40px;
 }
