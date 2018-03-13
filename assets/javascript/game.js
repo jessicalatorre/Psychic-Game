@@ -14,10 +14,12 @@ var playerLosses = 0;
 var guessesRemaining = 9;
 var AllUserGuessesArray = []; //This is letter the user will press on keyboard ; must declare this - input as blank - line 27 will populate with a letter once the user keys up (chooses)
 
+
+//Laura, feel free to delete line 18 - 26. Was playing with this function
 // function reset(){ //Can try using this rather than resetting in under conditional statements, try creating a fucntion and inputting the function under each if statement. 
-//     totalGuesses = 9;
+//     AllUserGuessesArray = 9;
 //     guessesRemaining = 9;
-//     userGuess = "";
+//     userInputGuess = "";
 //     updateLettersToGuess();  // not sure what to do with these 3 functions
 //     GuessesLeft();
 //     GuessessoFar();
@@ -32,21 +34,27 @@ document.onkeyup = function(event) {
     computerGuess = letterArray[Math.floor(Math.random() * letterArray.length)];  
     
     if (userInputGuess === computerGuess) { //condition for winning. comparing userGuesses to computerGuess. If they're the same...
-        playerWins++; 
+        playerWins = playerWins +1;
         // reset(); 
         guessesRemaining = 9;     
         AllUserGuessesArray.length = [];     
     }
+    else if(guessesRemaining == 0) {
+        playerLosses = playerLosses + 1
+        guessesRemaining = 9;
+        AllUserGuessesArray.length = []; 
+    }
+
     else if (userInputGuess !== computerGuess) {
-        playerLosses==1;
+        playerLosses = playerLosses + 1;
         guessesRemaining = 9;
     }
     var html = "<h1>The Psychic Game </h1>" + 
     "<p>Guess what letter I'm thinking of</p>" +
-    "<p>Guesses so far: " +  AllUserGuessesArray +"</p>"
+    "<p>Guesses so far: " +  AllUserGuessesArray +"</p>" +
     "<p>Wins: " + playerWins + "</p>" +
     "<p>Losses: " + playerLosses + "</p>" +
-    "<p>Guesses Remaining" + guessesRemaining + "</p>"
+    "<p>Guesses Remaining: " + guessesRemaining + "</p>"
 
     document.querySelector("#psychicGame").innerHTML = html;
 }
